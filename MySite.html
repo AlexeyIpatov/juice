@@ -4,30 +4,38 @@
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
         <title>Чат</title> 
         <link href="style.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="script.js"></script>
     </head> 
     <body class="background">
-<form name="test" method="post" style="text-align:center"> 
+<form name="innickname" method="post" style="text-align:center"> 
     <p class="color"><b>Введите имя: </b><br>
-<input type="text" size="40">
+<input id="first_nick" name="nickname" type="text" size="40">
+        <p>Изменить имя<input id="checkbox_nick" type="checkbox" name="multi_note" value="1" onclick="showMe(this,1)"></p>
+    <div id="div1" style="display:block; display:none;">
+    <input id="second_nick" name="result" type="text" size="40">
+    <p><input type="button" name="browser" value="Изменить имя" onClick="copypast_nick()"></p>
+</div>
          </p>
-<p><b></b><Br> 
-    <input type="checkbox" name="browser" value="ie">Изменить имя<Br>
 </p>
     </form>
-        <form oninput="result.value=text.value" style="text-align:center">
-    <div class="layer" style="margin: 0px auto; text-align: center;">
-   <h6 class="color">Начало диалога...</h6>
-   <p><output name="result"></output></p>
-
-  </div> 
-            </form>
         <form style="text-align:center">
 <p class="color"> Введите сообщение:<Br>
-<textarea name="text" cols="40" rows="3" class="textarea"></textarea></p>
-   <p><input class="new" type="submit" value="Отправить сообщение"> 
-       <input class="new" type="reset" value="Изменить сообщение">
-       <input class="new" type="reset" value="Удалить сообщения" /></p> 
+<textarea disabled="disabled" name="text" cols="70" rows="10" class="textarea" id="secondspace"> </textarea></p>
+           <p> <input id="firstspace" value="Введите сообщение" onfocus="this.value = ''"  />
+               <input class="new" type="button" value="Отправить сообщение" onClick="copypas()"> 
+           </p>
+            <p>Изменить сообщение<input id="checkbox_change" type="checkbox" name="multi_note" value="1" onclick="showMe(this, 2)">
+                <div id="div2" style="display:block; display:none;">
+                    <input id="change_number" name="result" type="text" size="40" value="Номер изменяего сообщения" onfocus="this.value = ''">
+    <input id="change_massage" name="result" type="text" size="40" value="Новое сообщение" onfocus="this.value = ''">
+    <p><input class="new" type="button" value="Изменить сообщение" onClick="to_change_massage()"></p>
+</div>
+                <p>Удалить сообщение<input id="checkbox_delete" type="checkbox" name="multi_note" value="1" onclick="showMe(this, 3)">
+                <div id="div3" style="display:block; display:none;">
+    <input id="delete_massage" name="result" type="text" size="40" value="Номер удаляемого сообщения" onfocus="this.value = ''">
+    <p><input class="new" type="button" value="Удалить cообщение" onClick="delete_some()"></p>
+</div>
+       <input class="new" type="button" value="Удалить cообщения" onClick="delete_all()" /></p> 
             </form>
 </body> 
-
 </html>
